@@ -1,0 +1,11 @@
+doctype html
+html
+	include ../includes/head.jade
+	link(rel='stylesheet', href='/static/stylesheets/admin.css')
+	body.admin
+		include ../admin/includes/navbar.jade
+		div.container
+			block content
+		include ../includes/foot.jade
+		block extraScripts
+		

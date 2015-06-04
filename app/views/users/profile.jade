@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block content
+	div.row
+		div.col-sm-8.col-md-6
+			form
+				fieldset
+					legend 个人信息
+					div.form-group
+						label.control-label 用户名
+						p.text-muted= session.user.username
+					div.form-group
+						label.control-label 员工号
+						p.text-muted= session.user.userId
+					div.form-group
+						label.control-label(for='inputName') 员工姓名
+						input.form-control#inputName(type='text', value=(session.user.name || ''), placeholder='请填写员工姓名')
+					div.form-group
+						label.control-label(for='inputPhone') 员工手机
+						input.form-control#inputPhone(type='text', value=(session.user.mobile||''), placeholder='请填写您的手机')
+					div.form-group
+						label.control-label 员工邮箱						
+						p.text-muted= session.user.email || '暂无'
+					div.form-group
+						label.control-label(for='selectCategory') 员工级别
+						p.text-muted= employeeMapper[session.user.level] || '暂无'
+					div.form-group
+						label.control-label(for='selectCategory') 上级
+						p.text-muted= (session.user.boss && (session.user.boss.name || session.user.boss.username)) || '暂无'
+					div.text-right
+						button.btn.btn-primary#postProfileBtn(type='button', disabled='') 修改个人信息(暂不开放)
+					div.profileMsg.text-right
+block extraScripts
+	script(type='text/javascript', src='/static/javascripts/advices/index.js')

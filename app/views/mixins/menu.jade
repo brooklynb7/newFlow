@@ -1,0 +1,17 @@
+- var current = url.original
+mixin menuLink(href, name)
+	a(href=href)= name
+
+mixin menuActiveLi(href, name)
+	if current === href
+		li.active
+			+menuLink(href, name)
+	else 
+		li
+			+menuLink(href, name)
+
+mixin menuAdminActiveLi(href, name)
+	+menuActiveLi('/admin' + href, name)
+
+mixin menuUserName()
+	span= session.user.name || session.user.username

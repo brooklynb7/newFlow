@@ -1,0 +1,29 @@
+.admin{
+	clear: both;
+}
+
+.admin .navbar-inverse.navbar .dropdown-menu .active>a,
+.admin .navbar-inverse.navbar {
+	background-color: #0080bf;
+}
+
+.admin .navbar-inverse.navbar .dropdown-menu li>a:hover, 
+.admin .navbar-inverse.navbar .dropdown-menu li>a:focus{
+	color: #0080bf;
+}
+
+.admin a, 
+.admin a:hover,
+.admin a:focus {
+	color: #337ab7;
+}
+
+.admin .btn-primary:not(.btn-link):not(.btn-flat){
+	background-color: #337ab7;
+}
+
+.admin .form-control,
+.admin .form-group .form-control:focus, 
+.admin .form-group-default .form-control:focus {
+	background-image: linear-gradient(#337ab7,#337ab7),linear-gradient(#d2d2d2,#d2d2d2);
+}
